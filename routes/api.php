@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\MouvementStockController;
 use App\Http\Controllers\Api\TypeMouvementController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::middleware('auth:sanctum')->group(function () {
 
