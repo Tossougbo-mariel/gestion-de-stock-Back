@@ -4,7 +4,7 @@
     "buildCommand": "composer install --no-dev && npm install && npm run build && chmod -R 775 storage bootstrap/cache"
   },
   "deploy": {
-    "startCommand": "php artisan serve --host=0.0.0.0 --port=${PORT}",
+    "startCommand": "php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=${PORT}",
     "healthcheckPath": "/"
   }
 }
