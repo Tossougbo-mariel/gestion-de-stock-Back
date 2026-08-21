@@ -29,4 +29,4 @@ RUN composer dump-autoload --optimize
 # Render fournit le port via la variable $PORT — Laravel doit écouter dessus
 EXPOSE 10000
 
-CMD php artisan config:cache && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+CMD php artisan migrate --force && php -S 0.0.0.0:${PORT:-10000} -t public
